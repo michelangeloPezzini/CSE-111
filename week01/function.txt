@@ -1,0 +1,47 @@
+#There are 4 types of functions
+1. Built-in functions
+  -You don´t need to import any module to use them.
+  exemples: input, int, float, str, len, range, abs, round, list, dict, open, and print.
+
+  #To call a function you must know the following three things:
+  1.The name of the function
+  2.The parameters that the function takes
+  3.What the function does
+
+  exemple 01:
+  name = input("Enter your name")
+  parameter = (prompt)
+  argument = ("String")
+
+  exemple 02:
+  def soma(num1, num2){
+    result = num1m + num2
+    print(result)
+  }
+  soma(5,4)
+
+  *A parameter is a piece of data that a function need to complete the task (num1, num2).
+  *An argument is the value that the user will give when the function be called (5,4).
+
+2. Standart library functions
+
+  Here you have to import modules that have a collection of related function.
+  exemple: 
+  import math
+  math.srqt(x)
+
+  From this short description, we know the following:
+  1.The name of the containing module is math.
+  2.The name of the function is sqrt.
+  3.The function takes one parameter named x.
+  4.The function computes and returns the square root of the number that is in x.
+
+
+3. Third-party functions
+
+4. User-defined functions
+
+ 
+
+
+
