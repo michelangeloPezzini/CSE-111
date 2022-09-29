@@ -1,0 +1,3 @@
+É possivel importar funções de arquivos externos.
+O correto é criar funções de teste separado dos programas de funções.
+Quando executamos nossas funções de teste ela automaticamente inicia a função main().
