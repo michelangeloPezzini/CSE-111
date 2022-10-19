@@ -9,8 +9,6 @@ def main():
   count = new_list_provinces.count("Alberta")
   print(new_list_provinces)
 
-
-
 def read_provinces(filename):
   list_provinces = []
   with open(filename, "rt") as provinces:
