@@ -86,7 +86,8 @@ def draw_line(canvas, x0, y0, x1, y1, *coords, width=1, fill="black"):
         assert isinstance(coord, Number), _wrong_type(name, coord, "number")
     for coord in coords:
         assert isinstance(coord, Number), "each coordinate must be a number"
-    assert isinstance(width, Number), _wrong_type_2("width", width, "number", 0)
+    assert isinstance(width, Number), _wrong_type_2(
+        "width", width, "number", 0)
     assert width >= 0, _less_than("width", width, 0)
     assert isinstance(fill, str), _wrong_type("fill", fill, "string")
 
@@ -95,11 +96,11 @@ def draw_line(canvas, x0, y0, x1, y1, *coords, width=1, fill="black"):
     for i in range(1, len(coords), 2):
         coords[i] = height - coords[i]
     canvas.create_line(x0, height-y0, x1, height-y1, *coords,
-            width=width, fill=fill)
+                       width=width, fill=fill)
 
 
 def draw_oval(canvas, x0, y0, x1, y1, *,
-        width=1, outline="black", fill=""):
+              width=1, outline="black", fill=""):
     """Draw an oval (ellipse) inside the bounding box defined by the
         coordinates (x0, y0), (x1, y1)
 
@@ -116,18 +117,19 @@ def draw_oval(canvas, x0, y0, x1, y1, *,
     assert isinstance(canvas, Canvas), _wrong_type("canvas", canvas, "Canvas")
     for name, coord in (("x0", x0), ("y0", y0), ("x1", x1), ("y1", y1)):
         assert isinstance(coord, Number), _wrong_type(name, coord, "number")
-    assert isinstance(width, Number), _wrong_type_2("width", width, "number", 0)
+    assert isinstance(width, Number), _wrong_type_2(
+        "width", width, "number", 0)
     assert width >= 0, _less_than("width", width, 0)
     for name, param in (("outline", outline), ("fill", fill)):
         assert isinstance(param, str), _wrong_type(name, param, "string")
 
     height = canvas.winfo_height()
     canvas.create_oval(x0, height-y0, x1, height-y1,
-            width=width, outline=outline, fill=fill)
+                       width=width, outline=outline, fill=fill)
 
 
 def draw_arc(canvas, x0, y0, x1, y1, *,
-        start=0, extent=90, width=1, outline="black", fill=""):
+             start=0, extent=90, width=1, outline="black", fill=""):
     """Draw a wedge shaped slice taken from an oval (ellipse) defined
     by the bounding box coordinates (x0, y0), (x1, y1).
 
@@ -151,19 +153,20 @@ def draw_arc(canvas, x0, y0, x1, y1, *,
     for name, coord in (("x0", x0), ("y0", y0), ("x1", x1), ("y1", y1),
                         ("start", start), ("extent", extent)):
         assert isinstance(coord, Number), _wrong_type(name, coord, "number")
-    assert isinstance(width, Number), _wrong_type_2("width", width, "number", 0)
+    assert isinstance(width, Number), _wrong_type_2(
+        "width", width, "number", 0)
     assert width >= 0, _less_than("width", width, 0)
     for name, param in (("outline", outline), ("fill", fill)):
         assert isinstance(param, str), _wrong_type(name, param, "string")
 
     height = canvas.winfo_height()
     canvas.create_arc(x0, height-y0, x1, height-y1,
-            start=start, extent=extent,
-            width=width, outline=outline, fill=fill, style=ARC)
+                      start=start, extent=extent,
+                      width=width, outline=outline, fill=fill, style=ARC)
 
 
 def draw_rectangle(canvas, x0, y0, x1, y1, *,
-        width=1, outline="black", fill=""):
+                   width=1, outline="black", fill=""):
     """Draw a rectangle with two corners at (x0, y0), (x1, y1)
 
     Parameters
@@ -179,14 +182,15 @@ def draw_rectangle(canvas, x0, y0, x1, y1, *,
     assert isinstance(canvas, Canvas), _wrong_type("canvas", canvas, "Canvas")
     for name, coord in (("x0", x0), ("y0", y0), ("x1", x1), ("y1", y1)):
         assert isinstance(coord, Number), _wrong_type(name, coord, "number")
-    assert isinstance(width, Number), _wrong_type_2("width", width, "number", 0)
+    assert isinstance(width, Number), _wrong_type_2(
+        "width", width, "number", 0)
     assert width >= 0, _less_than("width", width, 0)
     for name, param in (("outline", outline), ("fill", fill)):
         assert isinstance(param, str), _wrong_type(name, param, "string")
 
     height = canvas.winfo_height()
     canvas.create_rectangle(x0, height-y0, x1, height-y1,
-            width=width, outline=outline, fill=fill)
+                            width=width, outline=outline, fill=fill)
 
 
 def draw_vertical_gradient(canvas, x0, y0, color0, x1, y1, color1):
@@ -311,7 +315,7 @@ def draw_horizontal_gradient(canvas, x0, y0, color0, x1, y1, color1):
 
 
 def draw_circle_with_vert_grad(canvas, center_x, center_y, radius,
-        color_center, color_edge):
+                               color_center, color_edge):
     """Draw a circle with a vertical gradient from the center to both
     the top and bottom edges. The center of the circle will be at
     (center_x, center_y).
@@ -333,7 +337,7 @@ def draw_circle_with_vert_grad(canvas, center_x, center_y, radius,
     for name, coord in (("center_x", center_x), ("center_y", center_y)):
         assert isinstance(coord, Number), _wrong_type(name, coord, "number")
     for name, color in (("color_center", color_center),
-            ("color_edge", color_edge)):
+                        ("color_edge", color_edge)):
         assert isinstance(color, list) or isinstance(color, tuple), \
             _wrong_type(name, color, "list or tuple")
         assert len(color) == 3, \
@@ -374,7 +378,7 @@ def draw_circle_with_vert_grad(canvas, center_x, center_y, radius,
 
 
 def draw_polygon(canvas, x0, y0, x1, y1, x2, y2, *coords,
-        width=1, outline="black", fill=""):
+                 width=1, outline="black", fill=""):
     """Draw a polygon with vertices at (x0, y0), (x1, y1), ... (xn, yn).
     The polygon is always a closed polygon the same quantity of segments
     as vertices. In other words, the segments are defined as follows:
@@ -396,7 +400,8 @@ def draw_polygon(canvas, x0, y0, x1, y1, x2, y2, *coords,
         assert isinstance(coord, Number), _wrong_type(name, coord, "number")
     for coord in coords:
         assert isinstance(coord, Number), "each coordinate must be a number"
-    assert isinstance(width, Number), _wrong_type_2("width", width, "number", 0)
+    assert isinstance(width, Number), _wrong_type_2(
+        "width", width, "number", 0)
     assert width >= 0, _less_than("width", width, 0)
     for name, param in (("outline", outline), ("fill", fill)):
         assert isinstance(param, str), _wrong_type(name, param, "string")
@@ -406,7 +411,7 @@ def draw_polygon(canvas, x0, y0, x1, y1, x2, y2, *coords,
     for i in range(1, len(coords), 2):
         coords[i] = height - coords[i]
     canvas.create_polygon(x0, height-y0, x1, height-y1, x2, height-y2,
-            *coords, width=width, outline=outline, fill=fill)
+                          *coords, width=width, outline=outline, fill=fill)
 
 
 def draw_text(canvas, center_x, center_y, text, *, fill="black"):
@@ -484,8 +489,4 @@ def _less_than(name, param, minimum):
 
 
 if __name__ == "__main__":
-    assert False, \
-    f"{__file__} is not a program. It is a library of functions" \
-    " that draw 2-dimensional shapes to a canvas in a computer" \
-    " window. You are not supposed to run this file but instead" \
-    " import its functions into your program and run your program."
+    main()
