@@ -1,0 +1,18 @@
+Please respond thoroughly (at least two sentences for each question) to
+the following three questions.
+
+1. Describe an experience you had this semester where you saw the power of
+functions.
+In week 10, there was an exercise where I couldn't deliver it, because I wasn't understanding the logic behind the functions and parameters, after a help from the teacher, I finally managed to understand the logic and understand how parameters and functions can be useful in our day to day
+
+
+2. In your judgment, what is the value of test functions?
+I had never seen about it before this course, and learning about how to test our functions makes all the difference.
+I think about the tasks I have to deliver at work. I need tests in many ways, but I had never worked with python before, so learning how to test it helped me to have more confidence in my functions.
+
+
+3. Describe your process for troubleshooting and fixing a program that
+has a problem. What is one thing you can do to improve your process?
+1° I believe that something that can help me is to learn to always read and understand the terminal error.
+2° Always transform the code into functions to analyze it more easily.
+3° Test functions to analyze where the error is.
